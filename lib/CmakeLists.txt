@@ -1,0 +1,6 @@
+file (GLOB_RECURSE src_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.cpp)
+file (GLOB_RECURSE header_files RELATIVE ${CMAKE_CURRENT_SOURCE_DIR} *.h)
+set (ALL_FILES ${src_files} ${header_files})
+
+add_library(jxlib ${ALL_FILES})
+target_link_libraries(jxlib ${LIBS})

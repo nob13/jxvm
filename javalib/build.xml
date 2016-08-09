@@ -1,0 +1,30 @@
+<project>
+
+    <target name="clean">
+        <delete dir="build"/>
+    </target>
+
+    <target name="compile">
+        <mkdir dir="build/classes"/>
+        <javac includeantruntime="false" srcdir="src" destdir="build/classes"/>
+    </target>
+
+    <target name="jar" depends="compile">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/main.jar" basedir="build/classes">
+        </jar>
+    </target>
+
+    <target name="test_compile">
+        <mkdir dir="build/test_classes"/>
+        <javac includeantruntime="false" srcdir="test" destdir="build/test_classes"/>
+    </target>
+
+    <target name="test_jar" depends="test_compile">
+        <mkdir dir="build/jar"/>
+        <jar destfile="build/jar/test.jar" basedir="build/test_classes">
+        </jar>
+    </target>
+
+
+</project>

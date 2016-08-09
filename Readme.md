@@ -31,28 +31,13 @@ Requirements
  * Boost
  * Only tested OSX 10.11 so far.
  
+        # Java standard library is found via JAVA_HOME
+        export JAVA_HOME=/* path to some java VM where it can find jre/lib/rt.jar */
+        ./build_and_test.sh
 
-     # Build fake java library
-     cd javalib
-     ant jar 
-     ant test_jar
-     cd ..
-     
-     # Build jxvm
-     mkdir build
-     cd build
-     cmake ../
-     make -j4
-
-     # Java standard library is found via JAVA_HOME
-     export JAVA_HOME=/* path to some java VM where it can find jre/lib/rt.jar */
-     
-     # Running testcases
-     ./test/jx_test
-     
-     # Running Hello World.
-     cd apps
-     ./jxvm ../../manual_test/hello_world/HelloWorld.class
+        # Running Hello World.
+        cd build/apps
+        ./jxvm ../../manual_test/hello_world/HelloWorld.class
      
 
 License
